@@ -134,23 +134,23 @@ public final class ConfFileHandler {
 		InputStream dtdStream = new ByteArrayInputStream(new byte[0]);
 		File confDir = new File(SystemConfig.getHomePath(), "conf");
 		if (xmlFileName.equals("schema.xml")) {
-			dtdStream = MycatServer.class.getResourceAsStream("/schema.dtd");
+			dtdStream = MycatServer.class.getResourceAsStream("/backups/schema.dtd");
 			if (dtdStream == null) {
 				dtdStream = new ByteArrayInputStream(readFileByBytes(new File(
-						confDir, "schema.dtd")));
+						confDir, "backups/schema.dtd")));
 			}
 
 		} else if (xmlFileName.equals("server.xml")) {
-			dtdStream = MycatServer.class.getResourceAsStream("/server.dtd");
+			dtdStream = MycatServer.class.getResourceAsStream("/backups/server.dtd");
 			if (dtdStream == null) {
 				dtdStream = new ByteArrayInputStream(readFileByBytes(new File(
-						confDir, "server.dtd")));
+						confDir, "backups/server.dtd")));
 			}
 		} else if (xmlFileName.equals("rule.xml")) {
-			dtdStream = MycatServer.class.getResourceAsStream("/rule.dtd");
+			dtdStream = MycatServer.class.getResourceAsStream("/backups/rule.dtd");
 			if (dtdStream == null) {
 				dtdStream = new ByteArrayInputStream(readFileByBytes(new File(
-						confDir, "rule.dtd")));
+						confDir, "backups/rule.dtd")));
 			}
 		}
 		ConfigUtil.getDocument(dtdStream, new ByteArrayInputStream(data));

@@ -30,7 +30,7 @@ public class ZkConfig {
     */
     private static final Logger LOGGER = LoggerFactory.getLogger(ZkConfig.class);
 
-    private static final String ZK_CONFIG_FILE_NAME = "/myid.properties";
+    private static final String ZK_CONFIG_FILE_NAME = "/backups/myid.properties";
 
     private ZkConfig() {
     }

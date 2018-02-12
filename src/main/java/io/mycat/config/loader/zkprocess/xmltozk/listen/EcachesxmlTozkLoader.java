@@ -57,7 +57,7 @@ public class EcachesxmlTozkLoader extends ZkMultLoader implements NotiflyService
      * 缓存文件名称
     * @字段说明 CACHESERVER_NAME
     */
-    private static final String CACHESERVER_NAME = "cacheservice.properties";
+    private static final String CACHESERVER_NAME = "backups/cacheservice.properties";
 
     /**
      * 缓存的xml文件配制信息

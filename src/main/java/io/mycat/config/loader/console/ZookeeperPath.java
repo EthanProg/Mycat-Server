@@ -194,7 +194,7 @@ public enum ZookeeperPath {
      * zk本地配制目录信息
      * @字段说明 ZK_LOCAL_WRITE_PATH
      */
-    ZK_LOCAL_CFG_PATH("/zkconf/"),
+    ZK_LOCAL_CFG_PATH("/backups/zkconf/"),
 
     ;
     /**

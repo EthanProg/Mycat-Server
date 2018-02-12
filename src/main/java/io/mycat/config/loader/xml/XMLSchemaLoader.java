@@ -61,7 +61,7 @@ public class XMLSchemaLoader implements SchemaLoader {
 	
 	private static final Logger LOGGER = LoggerFactory.getLogger(XMLSchemaLoader.class);
 	
-	private final static String DEFAULT_DTD = "/schema.dtd";
+	private final static String DEFAULT_DTD = "/backups/schema.dtd";
 	private final static String DEFAULT_XML = "/schema.xml";
 
 	private final Map<String, TableRuleConfig> tableRules;

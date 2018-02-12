@@ -48,7 +48,7 @@ import io.mycat.util.SplitUtil;
  */
 @SuppressWarnings("unchecked")
 public class XMLRuleLoader {
-	private final static String DEFAULT_DTD = "/rule.dtd";
+	private final static String DEFAULT_DTD = "/backups/rule.dtd";
 	private final static String DEFAULT_XML = "/rule.xml";
 
 	private final Map<String, TableRuleConfig> tableRules;

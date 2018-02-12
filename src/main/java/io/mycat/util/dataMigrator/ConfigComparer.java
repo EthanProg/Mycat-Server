@@ -39,7 +39,7 @@ public class ConfigComparer {
 	 * schema2=all
 	 * ...
 	 */
-	private final static String TABLES_FILE = "/migrateTables.properties";  
+	private final static String TABLES_FILE = "/backups/migrateTables.properties";
     private final static String NEW_SCHEMA = "/newSchema.xml";
 	private final static String NEW_RULE = "/newRule.xml";
 	private final static String DN_INDEX_FILE = "/dnindex.properties";

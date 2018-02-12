@@ -64,7 +64,7 @@ public class CacheService {
 	private void init() throws Exception {
 		Properties props = new Properties();
 		props.load(CacheService.class
-				.getResourceAsStream("/cacheservice.properties"));
+				.getResourceAsStream("/backups/cacheservice.properties"));
 		final String poolFactoryPref = "factory.";
 		final String poolKeyPref = "pool.";
 		final String layedPoolKeyPref = "layedpool.";

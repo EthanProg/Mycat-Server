@@ -51,7 +51,7 @@ public class CharsetUtil {
 
         String filePath = Thread.currentThread().getContextClassLoader()
                 .getResource("").getPath().replaceAll("%20", " ")
-                + "index_to_charset.properties";
+                + "backups/index_to_charset.properties";
         Properties prop = new Properties();
         try {
             prop.load(new FileInputStream(filePath));

@@ -61,7 +61,7 @@ public class ServerxmlTozkLoader extends ZkMultLoader implements NotiflyService 
      * index_to_charset文件的路径信息
      * @字段说明 SCHEMA_PATH
      */
-    private static final String INDEX_TOCHARSET_PATH = "index_to_charset.properties";
+    private static final String INDEX_TOCHARSET_PATH = "backups/index_to_charset.properties";
 
     /**
      * server的xml的转换信息

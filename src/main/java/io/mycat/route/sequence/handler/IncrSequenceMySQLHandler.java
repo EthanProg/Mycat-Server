@@ -1,7 +1,5 @@
 package io.mycat.route.sequence.handler;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -29,7 +27,7 @@ public class IncrSequenceMySQLHandler implements SequenceHandler {
 	protected static final Logger LOGGER = LoggerFactory
 			.getLogger(IncrSequenceMySQLHandler.class);
 
-	private static final String SEQUENCE_DB_PROPS = "sequence_db_conf.properties";
+	private static final String SEQUENCE_DB_PROPS = "backups/sequence_db_conf.properties";
 	protected static final String errSeqResult = "-999999999,null";
 	protected static Map<String, String> latestErrors = new ConcurrentHashMap<String, String>();
 	private final FetchMySQLSequnceHandler mysqlSeqFetcher = new FetchMySQLSequnceHandler();

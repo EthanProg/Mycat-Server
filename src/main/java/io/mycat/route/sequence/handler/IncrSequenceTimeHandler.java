@@ -9,7 +9,7 @@ import org.slf4j.Logger; import org.slf4j.LoggerFactory;
 public class IncrSequenceTimeHandler implements SequenceHandler {
     protected static final Logger LOGGER = LoggerFactory.getLogger(IncrSequenceTimeHandler.class);
 
-	private static final String SEQUENCE_DB_PROPS = "sequence_time_conf.properties";
+	private static final String SEQUENCE_DB_PROPS = "backups/sequence_time_conf.properties";
 	private static final IncrSequenceTimeHandler instance = new IncrSequenceTimeHandler();
 	private static IdWorker workey = new IdWorker(1,1);
 

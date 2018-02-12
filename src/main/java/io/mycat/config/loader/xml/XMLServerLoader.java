@@ -91,7 +91,7 @@ public class XMLServerLoader {
         InputStream dtd = null;
         InputStream xml = null;
         try {
-            dtd = XMLServerLoader.class.getResourceAsStream("/server.dtd");
+            dtd = XMLServerLoader.class.getResourceAsStream("/backups/server.dtd");
             xml = XMLServerLoader.class.getResourceAsStream("/server.xml");
             Element root = ConfigUtil.getDocument(dtd, xml).getDocumentElement();
 

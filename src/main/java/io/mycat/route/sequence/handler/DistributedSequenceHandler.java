@@ -42,7 +42,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class DistributedSequenceHandler extends LeaderSelectorListenerAdapter implements Closeable, SequenceHandler {
     protected static final Logger LOGGER = LoggerFactory.getLogger(DistributedSequenceHandler.class);
-    private static final String SEQUENCE_DB_PROPS = "sequence_distributed_conf.properties";
+    private static final String SEQUENCE_DB_PROPS = "backups/sequence_distributed_conf.properties";
     private static DistributedSequenceHandler instance;
 
     private final long timestampBits = 38L;
