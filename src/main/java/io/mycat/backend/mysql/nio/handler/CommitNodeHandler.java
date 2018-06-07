@@ -128,6 +128,7 @@ public class CommitNodeHandler implements ResponseHandler {
 		errPkg.read(err);
 		String errInfo = new String(errPkg.message);
 		session.getSource().setTxInterrupt(errInfo);
+		session.getSource().setTxInterrupted(false);
 		errPkg.write(session.getSource());
 
 	}

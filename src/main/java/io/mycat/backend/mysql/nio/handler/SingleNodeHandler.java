@@ -273,6 +273,7 @@ public class SingleNodeHandler implements ResponseHandler, Terminatable, LoadDat
 		errPkg.write(source);
 		
 		recycleResources();
+		source.setTxInterrupted(false);
 	}
 
 

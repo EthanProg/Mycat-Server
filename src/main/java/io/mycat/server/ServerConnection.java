@@ -118,6 +118,10 @@ public class ServerConnection extends FrontendConnection {
 		}
 	}
 
+	public void setTxInterrupted(boolean txInterrupted) {
+		this.txInterrupted = txInterrupted;
+	}
+
 	public boolean isTxInterrupted()
 	{
 		return txInterrupted;
