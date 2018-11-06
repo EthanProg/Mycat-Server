@@ -7,7 +7,19 @@
 	WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. - See the 
 	License for the specific language governing permissions and - limitations 
 	under the License. -->
-<!DOCTYPE mycat:rule SYSTEM "D:\workspace_intellij\Mycat-Server\src\main\resources\backups\rule.dtd">
+<!DOCTYPE mycat:rule SYSTEM "rule.dtd">
 <mycat:rule xmlns:mycat="http://io.mycat/">
+	<tableRule name="MRTDB_INTFILE">
+		<rule>
+			<columns>ORG_CODE</columns>
+			<algorithm>MRTDB_INTFILE</algorithm>
+		</rule>
+	</tableRule>
+	<function name="MRTDB_INTFILE"
+		class="io.mycat.route.function.PartitionByFileMap">
+		<property name="mapFile">partition-hash-int.txt</property>
+		<property name="type">1</property>
+		<property name="defaultNode">1</property>
+	</function>
 
 </mycat:rule>

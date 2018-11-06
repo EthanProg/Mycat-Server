@@ -1,17 +1,347 @@
 <?xml version="1.0"?>
-<!DOCTYPE mycat:schema SYSTEM "D:\workspace_intellij\Mycat-Server\src\main\resources\backups\schema.dtd">
+<!DOCTYPE mycat:schema SYSTEM "schema.dtd">
 <mycat:schema xmlns:mycat="http://io.mycat/">
 
-	<schema name="dbtest" checkSQLschema="true" sqlMaxLimit="100">
-		<table name="travelrecord" dataNode="dn1" autoIncrement="true" primaryKey="id"/>
+<schema name="MRTDB" checkSQLschema="true">
+	    <!-- mrtdb-global  -->	
+		<table name="pub_goodssort_name_map"  dataNode="dn1,dn2" type="global" />
+		<table name="sys_secure_app"  dataNode="dn1,dn2" type="global" />
+		<table name="schedule_task"  dataNode="dn1,dn2" type="global" />
+		<table name="schedule_task_result"  dataNode="dn1,dn2" type="global" />
+		<table name="base_dict"   dataNode="dn1,dn2" type="global" />
+		<table name="base_rule"   dataNode="dn1,dn2" type="global" />
+		<table name="pub_orginfo"  dataNode="dn1,dn2" type="global" />
+		<table name="pub_idtable"  dataNode="dn1,dn2" type="global" />
+		<table name="sys_app"  dataNode="dn1,dn2" type="global" />
+		<table name="sys_config"  dataNode="dn1,dn2" type="global" />
+		<table name="sys_menu"  dataNode="dn1,dn2" type="global" />
+		<table name="sys_menu_type"  dataNode="dn1,dn2" type="global" />
+		<table name="sys_menu_type_line"  dataNode="dn1,dn2" type="global" />
+		<table name="sys_resource"  dataNode="dn1,dn2" type="global" />
+		<table name="sys_resource_role"  dataNode="dn1,dn2" type="global" />
+		<table name="sys_role"  dataNode="dn1,dn2" type="global" />
+		<table name="sys_third_app"  dataNode="dn1,dn2" type="global" />
+		<table name="sys_user"  dataNode="dn1,dn2" type="global" />
+		<table name="sys_virtual_app"  dataNode="dn1,dn2" type="global" />
+		<table name="base_v6report_chart"   dataNode="dn1,dn2" type="global" />
+		<table name="base_v6report_design"   dataNode="dn1,dn2" type="global" />
+		<table name="base_v6report_design_searcher"   dataNode="dn1,dn2" type="global" />
+		<table name="base_v6report_mix_detail"   dataNode="dn1,dn2" type="global" />
+		<table name="base_v6report_searcher"   dataNode="dn1,dn2" type="global" />
+		<table name="base_v6report_searcher_design"   dataNode="dn1,dn2" type="global" />
+		<table name="base_v6report_searcher_kind"   dataNode="dn1,dn2" type="global" />
+		<table name="base_v6report_type"   dataNode="dn1,dn2" type="global" />
+		<table name="ca_prod_info"   dataNode="dn1,dn2" type="global" />
+		<table name="ca_upgrade_version"  dataNode="dn1,dn2" type="global" />
+		<table name="cs_consumer_comment_sum"  dataNode="dn1,dn2" type="global" />
+		<table name="cs_consumer_login_info"  dataNode="dn1,dn2" type="global" />
+		<table name="cs_users_ext_addr"  dataNode="dn1,dn2" type="global" />
+		<table name="lambo_dual"  dataNode="dn1,dn2" type="global" />
+		<table name="meap_wx_app"  dataNode="dn1,dn2" type="global" />
+		<table name="pub_cant"  dataNode="dn1,dn2" type="global" />
+		<table name="pub_common_help"  dataNode="dn1,dn2" type="global" />
+		<table name="pub_mon_log_line"  dataNode="dn1,dn2" type="global" />
+		<table name="pub_consumer"  dataNode="dn1,dn2" type="global" />
+		<table name="mu_app"  dataNode="dn1,dn2" type="global" />
+		<table name="mu_menu"  dataNode="dn1,dn2" type="global" />
+		<table name="mu_menu_type"  dataNode="dn1,dn2" type="global" />
+		<table name="mu_role"  dataNode="dn1,dn2" type="global" />
+		<table name="mu_resource"  dataNode="dn1,dn2" type="global" />
+		<table name="mu_res_role"  dataNode="dn1,dn2" type="global" />
+		<table name="mu_res_menu"  dataNode="dn1,dn2" type="global" />
+		<!-- mrtdb-sharding-by-intfile  -->
+		<table name="acc_close_forday"   dataNode="dn1,dn2"  rule="MRTDB_INTFILE"/>
+		<table name="base_app_version"   dataNode="dn1,dn2"  rule="MRTDB_INTFILE"/>
+		<table name="base_link_tab"   dataNode="dn1,dn2"  rule="MRTDB_INTFILE"/>
+		<table name="ca_gray_users"   dataNode="dn1,dn2"  rule="MRTDB_INTFILE"/>
+		<table name="ca_license_change_log"   dataNode="dn1,dn2"  rule="MRTDB_INTFILE"/>
+		<table name="ca_login_info"   dataNode="dn1,dn2"  rule="MRTDB_INTFILE"/>
+		<table name="ca_menu_type"   dataNode="dn1,dn2"  rule="MRTDB_INTFILE"/>	
+		<table name="ca_shop_info"  dataNode="dn1,dn2"    rule="MRTDB_INTFILE"/>
+		<table name="ca_shop_info_ext"  dataNode="dn1,dn2"    rule="MRTDB_INTFILE"/>
+		<table name="ca_shop_info_log"  dataNode="dn1,dn2"    rule="MRTDB_INTFILE"/>
+		<table name="ca_tenant"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="ca_terminal_info"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="ca_users"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="cs_act"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="cs_act_img"  dataNode="dn1,dn2"    rule="MRTDB_INTFILE"/>
+		<table name="cs_act_inte"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="cs_act_inte_exchange"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="cs_act_inte_rule"  dataNode="dn1,dn2"    rule="MRTDB_INTFILE"/>
+		<table name="cs_act_inte_user"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="cs_act_invest"  dataNode="dn1,dn2"    rule="MRTDB_INTFILE"/>
+		<table name="cs_act_invest_question"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="cs_act_invest_question_line"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="cs_act_invest_subject"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="cs_act_invest_user"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="cs_act_invest_user_line"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="cs_act_recommend"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="cs_act_recommend_goods"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="cs_act_second_discount"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="cs_act_shop"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="cs_act_wechat_packets"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="cs_act_wechat_packets_goods"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="cs_act_wechat_packets_log"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="cs_act_wechat_packets_rule"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="cs_arrival_notice"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="cs_co_comment"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="cs_co_line_comment"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="cs_consumer_comment"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="cs_cust_service"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="cs_face"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="cs_face_flow"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="cs_favgoods"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="cs_favshop"  dataNode="dn1,dn2"    rule="MRTDB_INTFILE"/>
+		<table name="cs_goods_cart"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="cs_goods_co"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="cs_goods_co_line"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="cs_goods_comment_sum"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="cs_goods_ordcust"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="cs_goods_return"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="cs_message"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="cs_message_line"  dataNode="dn1,dn2"    rule="MRTDB_INTFILE"/>
+		<table name="cs_onlineshop_open"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="cs_recommend_act"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="cs_recommend_exchange"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="cs_recommend_godssort"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="cs_recommend_godssort_line"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="cs_shop_comment_sum"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="cs_sms_randomline"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="cust_inte_import"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="data_sync_send"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="ec_cgt_co"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="ec_cgt_co_detail"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="pub_abnomal"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="pub_ad"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="pub_ad_shops"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="pub_cardinfo"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="pub_cardtype"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="pub_concurrency_control"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="pub_dyn_conf"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="pub_exception_log"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="pub_goods_bind"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="pub_goods_bind_log"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="pub_goods_img"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="pub_goodschange_log"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="pub_goodsinfo"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="pub_goodsinfo_error"  dataNode="dn1,dn2" rule="MRTDB_INTFILE"   />
+		<table name="pub_goodssort"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="pub_mallbarcode"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="pub_mallgoods_bind"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="pub_mallgoods_img"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="pub_mallgoods_toreview"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="pub_mallgoodsinfo"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="pub_malltobaccoinfo"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="pub_meaunits"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="pub_message"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="pub_message_line"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="pub_mon_log"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="pub_notice"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="pub_orgtree"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="pub_pricegrade"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="pub_scan_barcode_log"  dataNode="dn1,dn2" rule="MRTDB_INTFILE"   />
+		<table name="pub_vendor"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="pub_vendor_goods"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="rck_goods_day"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="rck_goods_month"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="rck_month_close"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="rdc_cs_day"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="rdc_cs_month"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="rdc_cust_day"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="rdc_cust_goods_day"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="rdc_cust_goods_month"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="rdc_cust_hour"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="rdc_cust_index_day"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="rdc_cust_month"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="rdc_cust_pay_day"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="rdc_cust_pay_month"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="rdc_mall_day"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="rdc_mall_goods_day"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="rdc_mall_goods_month"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="rdc_mall_hour"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="rdc_mall_index_day"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="rdc_mall_month"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="rdc_mall_online_goods"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="rdc_mall_pay_day"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="rdc_mall_pay_month"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="rdc_task_log"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="sal_salesdata"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="sal_salesdata_err"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="sal_salesorder"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="sal_salesorder_err"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="sal_trade_flow"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="sal_trade_flow_err"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="sal_trndata"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="sal_trnorder"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="stk_stockdata"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="stk_stockorder"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="sto_changedata"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="sto_changeorder"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="sto_printdata"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="sto_printorder"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="sto_storage"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="sto_storage_log"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="sys_define"    dataNode="dn1,dn2"      rule="MRTDB_INTFILE"/>
+		<table name="td_shop_warning"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="td_sto_check"  dataNode="dn1,dn2"   rule="MRTDB_INTFILE" />
+		<table name="td_visit_plan_ln"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="cs_consumer_daily_sign"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="cs_shop_daily_sign"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="pub_barcode"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="rdc_cust_inte_act_day"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="rdc_cust_inte_act_month"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="td_mall_warning"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="cs_consumer_fill_info"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="cs_act_lottery"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="cs_act_lottery_award"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="cs_act_lottery_chance_rule"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="cs_act_lottery_imdchance_rule"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="cs_act_lottery_stat"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="cs_act_lottery_ticket"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="cs_act_lottery_user_chance"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="cs_act_lottery_user_draw"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="ca_org_info_ext"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="pub_busi_log"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="ca_employee"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="cs_act_inte_cash_rule"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="cs_act_inte_cash_flow"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="cs_cloud_coin_flow"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="pub_plm_item"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="card_inte_type_bind"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="rdc_cs_pay_day"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="rdc_cs_pay_month"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="rdc_cs_cust_pay_day"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="rdc_cs_cust_pay_month"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="rdc_cs_goods_day"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="rdc_cs_goods_month"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="rdc_cs_cust_day"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="rdc_cs_cust_month"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="rdc_cs_cust_goods_day"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="rdc_cs_cust_goods_month"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="smoking_room_info"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="pub_business_caption"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="rck_goods_day_temp"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="pub_consumer_org_ext"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="pub_consumer_log"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="sal_coupon_flow"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="CS_CUST_MARKET_FEEDBACK"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="CA_PROCHAINS_INFO"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="PUB_CONSUMER_ORG"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="cs_act_discount_gods"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="MKT_DEMANDORDER"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="MKT_DEMANDDATA"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="STK_INDENTORDER"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="STK_INDENTDATA"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="CS_ACT_INTE_LIMIT"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+		<table name="ca_shop_menu"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+                <table name="PUB_APP_FOLLOWER"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+                <table name="CS_ACT_INTE_SALE"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+                <table name="CS_ACT_INTE_SALE_MONTH"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+                <table name="CS_ACT_INTE_SALE_DAY"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+                <table name="SAL_BUSIDATA"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+                <table name="SAL_BUSIORDER"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+                <table name="CS_COUPON_RULE"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+                <table name="CS_COUPON_SHOP"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+                <table name="CS_COUPON_GOODS"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+                <table name="CS_COUPON_USER"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+                <table name="cs_consumer_apply"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+                <table name="cs_consumer_feedback"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+                <table name="cs_consumer_feedback_line"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+                <table name="cs_mallgoods_comment"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+                <table name="cs_mallgoods_comment_line"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+                <table name="cs_mallgoods_comment_sum"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+                <table name="STK_EXPIRY_ALARM"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+                <table name="PUB_VENDOR_CONTRACT"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+                <table name="PUB_VENDOR_CONTRACT_FILE"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+                <table name="PUB_VENDOR_FEE"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+                <table name="CS_REWARD_PUNISH_RULE"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+                <table name="PUB_GOODSBOX"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+                <table name="PUB_GOODSBOX_LINE"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+                <table name="PUB_GOODSBOX_SHOP"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+                <table name="CS_ACT_EXCHANGE_USER"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+                <table name="CS_ACT_CUST_EXCHANGE_USER"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+                <table name="RDC_CS_INTE_ACT_DAY"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+                <table name="RDC_CS_CUST_INTE_ACT_DAY"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+                <table name="RDC_CS_INTE_ACT_MONTH"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+                <table name="RDC_CS_CUST_INTE_ACT_MONTH"  dataNode="dn1,dn2"  rule="MRTDB_INTFILE"  />
+	</schema>
+	
+	
+	<schema name="FROM_RTDB" checkSQLschema="false">
+		<table name="PUB_GOODS_BIND_G"  dataNode="dn3,dn4" type="global" />
+		<table name="PUB_GOODSINFO_G"  dataNode="dn3,dn4" type="global" />
+		<table name="SCHEDULE_TASK"  dataNode="dn3,dn4" type="global" />
+		<table name="SCHEDULE_TASK_RESULT"  dataNode="dn3,dn4" type="global" />
+		<table name="CA_SHOP_INFO"  dataNode="dn3,dn4"   rule="MRTDB_INTFILE" />
+		<table name="MOV_BARCODE"   dataNode="dn3,dn4"   rule="MRTDB_INTFILE" />
+		<table name="PUB_BARCODE"  dataNode="dn3,dn4"   rule="MRTDB_INTFILE" />
+		<table name="PUB_CUSTOMER"  dataNode="dn3,dn4"   rule="MRTDB_INTFILE" />
+		<table name="PUB_GOODS_RELATION"   dataNode="dn3,dn4"   rule="MRTDB_INTFILE" />
+		<table name="PUB_GOODSINFO"  dataNode="dn3,dn4"   rule="MRTDB_INTFILE" />
+		<table name="PUB_GOODSINFOEXT"  dataNode="dn3,dn4"   rule="MRTDB_INTFILE" />
+		<table name="PUB_GOODSPRICE"  dataNode="dn3,dn4"   rule="MRTDB_INTFILE" />
+		<table name="PUB_GOODSSORT"  dataNode="dn3,dn4"   rule="MRTDB_INTFILE" />
+		<table name="PUB_IC_INFO"   dataNode="dn3,dn4"   rule="MRTDB_INTFILE" />
+		<table name="PUB_MEAUNITS"  dataNode="dn3,dn4"   rule="MRTDB_INTFILE" />
+		<table name="SAL_SALESDATA"  dataNode="dn3,dn4"   rule="MRTDB_INTFILE" />
+		<table name="SAL_SALESORDER"  dataNode="dn3,dn4"   rule="MRTDB_INTFILE" />
+		<table name="STK_STOCKORDER"  dataNode="dn3,dn4"   rule="MRTDB_INTFILE" />
+		<table name="STK_STOCKDATA"  dataNode="dn3,dn4"   rule="MRTDB_INTFILE" />
+		<table name="STO_CHANGEDATA"  dataNode="dn3,dn4"   rule="MRTDB_INTFILE" />
+		<table name="STO_CHANGEORDER"  dataNode="dn3,dn4"   rule="MRTDB_INTFILE" />
+		<table name="STO_STORAGE"  dataNode="dn3,dn4"   rule="MRTDB_INTFILE" />
+		<table name="RCK_GOODS_DAYS"  dataNode="dn3,dn4"   rule="MRTDB_INTFILE" />
+		<table name="RCK_GOODS_MONTH"  dataNode="dn3,dn4"   rule="MRTDB_INTFILE" />
+		<table name="RCK_MONTH_CLOSE"  dataNode="dn3,dn4"   rule="MRTDB_INTFILE" />
 	</schema>
 
-	<dataNode name="dn1" dataHost="localhost1" database="db01"/>
 
-	<dataHost name="localhost1" maxCon="1000" minCon="10" balance="0"
-			  writeType="0" dbType="mysql" dbDriver="native" switchType="1" slaveThreshold="100">
+	<schema name="TO_MRTDB" checkSQLschema="false">
+		<table name="SCHEDULE_TASK"  dataNode="dn5,dn6" type="global" />
+		<table name="SCHEDULE_TASK_RESULT"  dataNode="dn5,dn6" type="global" />
+		<table name="PUB_BARCODE"   dataNode="dn5,dn6"   rule="MRTDB_INTFILE" />
+		<table name="PUB_CARDINFO"  dataNode="dn5,dn6"   rule="MRTDB_INTFILE" />
+		<table name="PUB_CONSUMER"  dataNode="dn5,dn6"   rule="MRTDB_INTFILE" />
+		<table name="PUB_GOODS_BIND"   dataNode="dn5,dn6"   rule="MRTDB_INTFILE" />
+		<table name="PUB_GOODSINFO"  dataNode="dn5,dn6"   rule="MRTDB_INTFILE" />
+		<table name="PUB_GOODS_IMG"  dataNode="dn5,dn6"   rule="MRTDB_INTFILE" />
+		<table name="RCK_GOODS_DAY"  dataNode="dn5,dn6"   rule="MRTDB_INTFILE" />
+		<table name="RCK_GOODS_MONTH"  dataNode="dn5,dn6"   rule="MRTDB_INTFILE" />
+		<table name="RCK_MONTH_CLOSE"  dataNode="dn5,dn6"   rule="MRTDB_INTFILE" />
+		<table name="SAL_SALESDATA"   dataNode="dn5,dn6"   rule="MRTDB_INTFILE" />
+		<table name="SAL_SALESORDER"  dataNode="dn5,dn6"   rule="MRTDB_INTFILE" />
+		<table name="SAL_TRADE_FLOW"  dataNode="dn5,dn6"   rule="MRTDB_INTFILE" />
+		<table name="STK_STOCKORDER"  dataNode="dn5,dn6"   rule="MRTDB_INTFILE" />
+		<table name="STK_STOCKDATA"  dataNode="dn5,dn6"   rule="MRTDB_INTFILE" />
+		<table name="STO_CHANGEDATA"  dataNode="dn5,dn6"   rule="MRTDB_INTFILE" />
+		<table name="STO_CHANGEORDER"   dataNode="dn5,dn6"   rule="MRTDB_INTFILE" />
+		<table name="STO_STORAGE"  dataNode="dn5,dn6"   rule="MRTDB_INTFILE" />
+		<table name="STO_STORAGE_LOG"  dataNode="dn5,dn6"   rule="MRTDB_INTFILE" />
+	</schema>
+
+	<dataNode name="dn1" dataHost="mysql1" database="MRTDB" />
+	<dataNode name="dn2" dataHost="mysql2" database="MRTDB" />
+	<dataNode name="dn3" dataHost="mysql1" database="FROM_RTDB" />
+	<dataNode name="dn4" dataHost="mysql2" database="FROM_RTDB" />
+	<dataNode name="dn5" dataHost="mysql1" database="TO_MRTDB" />
+	<dataNode name="dn6" dataHost="mysql2" database="TO_MRTDB" />
+
+       <dataHost name="mysql1" maxCon="1000" minCon="10" balance="3"
+			  writeType="0" dbType="mysql" dbDriver="native" switchType="2"  slaveThreshold="100">
 		<heartbeat>select user()</heartbeat>
-		<writeHost host="hostM1" url="127.0.0.1:3306" user="root" password="root">
+		<!-- can have multi write hosts -->
+		<writeHost host="hostM1" url="10.110.1.178:3306" user="rtuser"  password="rtuser">
+			<!-- can have multi read hosts -->
+		 <!-- <readHost host="hostS11" url="10.110.1.178:3306" user="rtuser" password="rtuser"/>-->
+		</writeHost>
+	</dataHost>
+	<dataHost name="mysql2" maxCon="1000" minCon="10" balance="3"
+			  writeType="0" dbType="mysql" dbDriver="native" switchType="2"  slaveThreshold="100">
+		<heartbeat>select user()</heartbeat>
+		<!-- can have multi write hosts -->
+		<writeHost host="hostM2" url="10.10.250.130:3306" user="rtuser"  password="rtuser">
+			<!-- can have multi read hosts -->
+		 <!-- <readHost host="hostS21" url="mysqlslave21:3306" user="rtuser" password="rtuser"/> -->
 		</writeHost>
 	</dataHost>
 </mycat:schema>

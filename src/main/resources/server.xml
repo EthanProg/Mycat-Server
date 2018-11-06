@@ -7,25 +7,100 @@
 	WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. - See the 
 	License for the specific language governing permissions and - limitations 
 	under the License. -->
-<!DOCTYPE mycat:server SYSTEM "D:\workspace_intellij\Mycat-Server\src\main\resources\backups\server.dtd">
+<!DOCTYPE mycat:server SYSTEM "server.dtd">
 <mycat:server xmlns:mycat="http://io.mycat/">
 	<system>
-		<property name="nonePasswordLogin">0</property> <!-- 0为需要密码登陆、1为不需要密码登陆 ,默认为0，设置为1则需要指定默认账户-->
-		<property name="useHandshakeV10">1</property>
-		<property name="useSqlStat">0</property>  <!-- 1为开启实时统计、0为关闭 -->
-		<property name="useGlobleTableCheck">0</property>  <!-- 1为开启全加班一致性检测、0为关闭 -->
+		<!-- 配置该属性的时候一定要保证mycat的字符集和mysql 的字符集是一致的 -->      
+		<property name="charset">gbk</property>
+		<!-- 1为开启实时统计、0为关闭 -->
+		<property name="useSqlStat">0</property>  
+		<!-- 1为开启全加班一致性检测、0为关闭 -->
+		<property name="useGlobleTableCheck">0</property>  
+
+		<!-- 指定使用 Mycat 全局序列的类型。 0 为本地文件方式，1 为数据库方式，
+			 2 为时间戳序列方式，3 为分布式ZK ID 生成器，4 为 zk 递增 id 生成。-->
 		<property name="sequnceHandlerType">2</property>
+		
+		<!--1为开启mysql压缩协议-->
+		<!--  <property name="useCompression">1</property>--> 
+		<!--设置模拟的MySQL版本号-->
+        <!-- <property name="fakeMySQLVersion">5.6.20</property>--> 
+		
+		
+		<!-- 这个属性主要用于指定系统可用的线程数，默认值为机器 CPU 核心线程数。-->
+		<!--<property name="processors">8</property> -->
+		<!-- CPU 核心数越多，可以越大，当发现系统CPU 压力很小的情况下，可以适当调大此参数，
+			 如 4 核心的4CPU，可以设置为16，24 核心的可以最大设置为128-->
+		<!--<property name="processorExecutor">32</property> -->
+		<!-- 这个属性指定每次分配 Socket Direct Buffer 的大小，默认是 4096 个字节。
+			 这个属性也影响 buffer pool 的长度。如果一次性获取的数过大 buffer 不够用 
+			 经常出现警告，则可以适当调大.-->
+		<!-- <property name="processorBufferChunk">40960</property> -->
+		<!-- 这个属性指定 bufferPool 计算比例值。由于每次执行 NIO 读、写操作都需要使用到 buffer，
+			 系统初始化的时候会建立一定长度的 buffer 池来加快读、写的效率，减少建立 buffer 的时间。--> 
+		<!-- <property name="processorBufferPool">20480000</property>-->
+		
+	 
+		<!--默认为type 0: DirectByteBufferPool | type 1 ByteBufferArena-->
 		<property name="processorBufferPoolType">0</property>
+		
+		<!--默认是65535 64K 用于sql解析时最大文本长度 -->
+		<!--<property name="maxStringLiteralLength">65535</property>-->
+		<!--<property name="sequnceHandlerType">0</property>-->
+		<!--<property name="backSocketNoDelay">1</property>-->
+		<!--<property name="frontSocketNoDelay">1</property>-->
+		<!--<property name="processorExecutor">16</property>-->
+		
+		<property name="serverPort">8066</property> 
+		<property name="managerPort">9066</property> 
+		
+		<!--
+			<property name="idleTimeout">300000</property>
+			<property name="bindIp">0.0.0.0</property>
+			<property name="frontWriteQueueSize">4096</property> 
+		-->
+		<!--分布式事务开关，0为不过滤分布式事务，1为过滤分布式事务（如果分布式事务内只涉及全局表，则不过滤），2为不过滤分布式事务,但是记录分布式事务日志-->
 		<property name="handleDistributedTransactions">0</property>
+		
+		<!-- off heap for merge/order/group/limit      1开启   0关闭 -->
 		<property name="useOffHeapForMerge">1</property>
-		<property name="memoryPageSize">64k</property>
+
+		<!-- 单位为m -->
+		<property name="memoryPageSize">1m</property>
+
+		<!-- 单位为k -->
 		<property name="spillsFileBufferSize">1k</property>
+
 		<property name="useStreamOutput">0</property>
+
+		<!-- 单位为m -->
 		<property name="systemReserveMemorySize">384m</property>
-		<property name="useZKSwitch">false</property>
+
+		<!--是否采用zookeeper协调切换  -->
+		<property name="useZKSwitch">true</property>
+
+
 	</system>
-	<user name="root" defaultAccount="true">
-		<property name="password">123456</property>
-		<property name="schemas">dbtest</property>
+	
+	<user name="root">
+		<property name="password">root</property>
+		<property name="schemas">MRTDB,FROM_RTDB,TO_MRTDB</property>
 	</user>
+
+	<user name="rtuser">
+		<property name="password">rtuser</property>
+		<property name="schemas">MRTDB,FROM_RTDB,TO_MRTDB</property>
+	</user>
+
+	<!-- 全局SQL防火墙设置 -->
+	<!-- 
+	<firewall> 
+	   <whitehost>
+	      <host host="127.0.0.1" user="mycat"/>
+	      <host host="127.0.0.2" user="mycat"/>
+	   </whitehost>
+       <blacklist check="false">
+       </blacklist>
+	</firewall>
+	-->
 </mycat:server>
